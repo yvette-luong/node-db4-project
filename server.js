@@ -10,6 +10,6 @@ server.use("/", morgan("-- Data Modeling --"));
 
 server.get('/', (req, res) =>{
     res.status(200).json({api:'Welcome to Recipe DB'})
-})
+});
 
 module.exports = server
