@@ -21,7 +21,7 @@ exports.up = function(knex) {
         tbl.integer('ingredient_id').unsigned().notNullable();
     })
     .createTable('ingredients', tbl => {
-        tbl.increments('ingredient_id');
+        tbl.increments('ingredient_id').unsigned().notNullable();
         tbl.string('ingredient_name').unique().references('ingredient_name').inTable('recipes');
     })
     };
