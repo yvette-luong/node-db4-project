@@ -20,7 +20,9 @@ function getShoppingList(recipe_id){
     .where({ recipe_id : recipe_id})
     .join('ingredients', 'ingredients.ingredient_id', 'quantity.quantity_id')
     .select('ingredients.ingredient_name', 'quantity.quantity')
-}
+}//need to debug this babe : {
+//"errMessage": "Undefined binding(s) detected when compiling SELECT. Undefined column(s): [recipe_id] query: select `ingredients`.`ingredient_name`, `quantity`.`quantity` from `quantity` inner join `ingredients` on `ingredients`.`ingredient_id` = `quantity`.`quantity_id` where `recipe_id` = ?"
+// }
 
 function getInstructions(){
     return db('instructions')
